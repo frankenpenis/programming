@@ -1,0 +1,46 @@
+import java.util.*;
+public class SevenPointFive {
+	public static void main(String[] args) {
+		Scanner console = new Scanner(System.in);
+		double[][] userArray1 = new double [3][3];
+		double[][] userArray2 = new double [3][3];
+	
+		for(int i = 0; i < userArray1.length; i++) {
+			for (int j = 0; j < userArray1[i].length; j++) {
+				System.out.println("Enter numbers for matrix one: ");
+				userArray1[i][j] = console.nextDouble();
+			}
+		}
+		System.out.println("Moving to matrix two");
+		for(int i = 0; i < userArray1.length; i++) {
+			for (int j = 0; j < userArray1[i].length; j++) {
+				System.out.println("Enter numbers for matrix two: ");
+				userArray1[i][j] = console.nextDouble();
+			}
+		}
+		
+		double[][] result = addMatrix(userArray1, userArray2);
+		
+		System.out.println("The result is: ");
+		for(int i = 0; i < result.length; i++) {
+			for (int j = 0; j < result[i].length; j++) {
+				System.out.print(result[i][j] + " ");
+				if (j == 3)
+					System.out.print("\n")
+				
+			}
+		}
+
+	}
+	
+	
+	public static double[][] addMatrix(double[][]a,double[][]b) {
+		double[][] result = new double [a.length][b.length];
+		for(int i = 0; i < a.length; i++) {
+			for (int j = 0; j < a[i].length; j++) {
+				result[i][j] = a[i][j] + b[i][j];
+			}
+		}
+		return result;
+	}
+}

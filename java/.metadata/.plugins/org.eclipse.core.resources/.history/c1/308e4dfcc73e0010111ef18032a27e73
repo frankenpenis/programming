@@ -1,0 +1,50 @@
+import java.util.*;
+public class SevenPointFive {
+	public static void main(String[] args) {
+		double[][] userArray1 = new double [3][3];
+		double[][] userArray2 = new double [3][3];
+	
+	
+		getMatrix(userArray1, "one");
+		getMatrix(userArray2, "two");
+		
+		System.out.println("Matrix One");
+		printMatrix(userArray1);
+		System.out.println("Matrix Two");
+		printMatrix(userArray2);
+		
+		
+		System.out.println("\nThe sum of the matricies is: ");	
+		double[][] result = addMatrix(userArray1, userArray2);
+		printMatrix(result);
+	}
+
+	public static double[][] addMatrix(double[][]a,double[][]b) {
+		double[][] result = new double [a.length][a[0].length];
+		for(int i = 0; i < a.length; i++) {
+			for (int j = 0; j < a[i].length; j++) {
+				result[i][j] = a[i][j] + b[i][j];
+			}
+		}
+		return result;
+	}
+	private static void getMatrix(double[][] matrixToFill, String name) {
+		Scanner console = new Scanner(System.in);
+	    for(int i = 0; i < matrixToFill.length; i++) {
+	         for (int j = 0; j < matrixToFill[i].length; j++) {
+	              System.out.println("Enter numbers for matrix " + name + ": ");
+	              matrixToFill[i][j] = console.nextDouble();
+	         }
+	    }
+	}
+	private static void printMatrix(double[][] matrixToPrint) {
+	    for(int i = 0; i < matrixToPrint.length; i++) {
+	         for (int j = 0; j < matrixToPrint[i].length; j++) {
+					System.out.print(matrixToPrint[i][j] + " ");
+					if (j == 2)
+						System.out.print("\n");
+	         }
+	    }
+	}
+
+}

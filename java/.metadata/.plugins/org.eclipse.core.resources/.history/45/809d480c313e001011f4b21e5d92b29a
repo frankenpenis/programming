@@ -1,0 +1,20 @@
+import java.util.*;
+public class SevenPointFive {
+	public static void main(String[] args) {
+		Scanner console = new Scanner(System.in);
+		int[][] userArray1 = new int [3][3];
+		int[][] userArray2 = new int [3][3];
+		for(int i = 0; i < userArray1.length; i++) {
+			for (int j = 0; j < userArray1[i].length; j++) {
+				System.out.println("Enter numbers for matrix one: ");
+				userArray1[i][j] = console.nextInt();
+			}
+		}
+		for(int i = 0; i < userArray1.length; i++) {
+			for (int j = 0; j < userArray1[i].length; j++) {
+				System.out.print(userArray1[i][j] + " ");
+			}
+		}
+	}
+
+}

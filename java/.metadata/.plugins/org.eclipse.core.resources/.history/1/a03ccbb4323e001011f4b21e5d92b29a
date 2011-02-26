@@ -1,0 +1,28 @@
+import java.util.*;
+public class SevenPointFive {
+	public static void main(String[] args) {
+		Scanner console = new Scanner(System.in);
+		int[][] userArray1 = new int [3][3];
+		int[][] userArray2 = new int [3][3];
+		int[][] result = new int [3][3];
+		for(int i = 0; i < userArray1.length; i++) {
+			for (int j = 0; j < userArray1[i].length; j++) {
+				System.out.println("Enter numbers for matrix one: ");
+				userArray1[i][j] = console.nextInt();
+			}
+		}
+		System.out.println("Moving to matrix two");
+		for(int i = 0; i < userArray1.length; i++) {
+			for (int j = 0; j < userArray1[i].length; j++) {
+				System.out.println("Enter numbers for matrix two: ");
+				userArray1[i][j] = console.nextInt();
+			}
+		}
+		for(int i = 0, p = 0; i < userArray1.length, p < userArray2.length; i++, p++) {
+			for (int j = 0, k = 0; j < userArray1[i].length, k < userArray2[p].length; j++, k--) {
+				System.out.print(userArray1[i][j] + " ");
+			}
+		}
+	}
+
+}
